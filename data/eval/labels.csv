@@ -1,0 +1,17 @@
+image,category,gender,colors,pattern,fit,occasions,season,materials
+item-01.jpg,top,,white|navy,striped,,casual,SS,cotton
+item-02.jpg,jeans,,blue,solid,,casual,all-season,denim
+item-03.jpg,knitwear,,grey|navy|red|white,solid,,casual,AW,wool|knit
+item-04.jpg,shirt,,blue|white|red,solid,,casual,SS,linen
+item-05.jpg,shirt,,blue|white,floral,,casual,SS,cotton
+item-06.jpg,shirt,,red|white|black,checked,,casual,all-season,cotton
+item-07.jpg,knitwear,,beige,solid,,casual,AW,wool|knit
+item-08.jpg,outerwear,,black|red|grey,solid,,casual,AW,leather
+item-09.jpg,shoes,men,brown,solid,,work,all-season,leather
+item-10.jpg,shoes,,beige|brown,solid,,casual,AW,leather
+item-11.jpg,bag,unisex,brown,solid,,travel,all-season,leather
+item-12.jpg,accessory,unisex,beige,solid,,casual|travel,SS,
+item-13.jpg,accessory,unisex,brown,solid,,casual|travel,AW,wool
+item-14.jpg,accessory,unisex,green|grey|white,solid,,casual,AW,wool|knit
+item-15.jpg,accessory,women,purple|orange|blue|beige,printed,,casual|evening,all-season,silk
+item-16.jpg,accessory,unisex,blue|green,checked,,casual,AW,wool
