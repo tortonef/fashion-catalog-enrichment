@@ -49,16 +49,15 @@ Assumptions behind these figures (replace them with your own data):
 ## How it works
 
 ```mermaid
-flowchart LR
-    A[Product photo] --> B["FashionCLIP<br/>(local, CPU)"]
-    T[taxonomy.yaml<br/>allowed values] --> B
-    B --> C[Score per attribute]
-    C --> D{Confidence above<br/>threshold?}
+flowchart TD
+    A[Product photo] --> B["FashionCLIP scores every allowed value<br/>(local, CPU)"]
+    T[taxonomy.yaml] -.-> B
+    B --> D{Confidence above threshold?}
     D -- yes --> E[Pre-filled]
     D -- no --> F[Flagged for review]
-    E --> G[Human review<br/>and edits]
+    E --> G[Human review and edits]
     F --> G
-    G --> H{Valid against<br/>product schema?}
+    G --> H{Valid against product schema?}
     H -- yes --> I[CSV / JSON export]
     H -- no --> G
 ```
