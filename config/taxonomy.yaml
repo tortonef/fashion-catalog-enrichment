@@ -1,0 +1,94 @@
+# Zero-shot taxonomy. Keys are the values written to the product record (aligned with
+# schema/product.schema.json); values are the phrases shown to the model inside the template.
+groups:
+  category:
+    multi: false
+    template: "a product photo of a {}"
+    labels:
+      top: t-shirt or top
+      shirt: button-up shirt
+      knitwear: knitted sweater
+      dress: dress
+      skirt: skirt
+      trousers: pair of trousers
+      jeans: pair of denim jeans
+      outerwear: jacket or coat
+      shoes: pair of shoes
+      bag: bag
+      accessory: fashion accessory such as a belt, scarf or hat
+  colors:
+    multi: true
+    template: "a {} garment"
+    labels:
+      black: black
+      white: white
+      grey: grey
+      beige: beige
+      brown: brown
+      navy: navy blue
+      blue: light blue
+      green: green
+      red: red
+      pink: pink
+      yellow: yellow
+      orange: orange
+      purple: purple
+  pattern:
+    multi: false
+    template: "a garment with a {} pattern"
+    labels:
+      solid: plain solid-color
+      striped: striped
+      checked: checked or plaid
+      floral: floral
+      printed: graphic printed
+      dotted: polka dot
+  occasions:
+    multi: true
+    template: "a garment to wear for {}"
+    labels:
+      casual: casual everyday life
+      work: the office
+      evening: an evening out
+      ceremony: a wedding or formal ceremony
+      sport: sport and exercise
+      travel: travel
+  fit:
+    multi: false
+    experimental: true
+    template: "a {} garment"
+    labels:
+      slim: slim-fit
+      regular: regular-fit
+      relaxed: relaxed-fit
+      oversized: oversized
+  season:
+    multi: false
+    experimental: true
+    template: "a garment for {}"
+    labels:
+      SS: warm spring and summer weather
+      AW: cold autumn and winter weather
+      all-season: any season
+  materials:
+    multi: true
+    experimental: true
+    template: "a garment made of {}"
+    labels:
+      cotton: cotton
+      denim: denim
+      wool: wool
+      cashmere: cashmere
+      linen: linen
+      silk: silk
+      leather: leather
+      polyester: polyester
+      knit: knitted yarn
+  gender:
+    multi: false
+    experimental: true
+    template: "a product photo of {} clothing"
+    labels:
+      women: women's
+      men: men's
+      unisex: unisex
