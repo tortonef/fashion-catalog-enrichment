@@ -6,7 +6,7 @@
 
 **Turn a product photo into structured, catalog-ready attributes in seconds, with confidence scores and a human-review step, running 100% locally.**
 
-[![CI](https://github.com/GITHUB_USER/fashion-catalog-enrichment/actions/workflows/ci.yml/badge.svg)](https://github.com/GITHUB_USER/fashion-catalog-enrichment/actions/workflows/ci.yml)
+[![CI](https://github.com/tortonef/fashion-catalog-enrichment/actions/workflows/ci.yml/badge.svg)](https://github.com/tortonef/fashion-catalog-enrichment/actions/workflows/ci.yml)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-1F1B24)
 [![License: MIT](https://img.shields.io/badge/license-MIT-1F1B24)](LICENSE)
 ![Runs 100% locally](https://img.shields.io/badge/runs-100%25%20locally-C8553D)
@@ -76,14 +76,14 @@ The first setup downloads about 1 GB (PyTorch CPU and the 580 MB model) and take
 
 **Windows (PowerShell)**
 ```powershell
-git clone https://github.com/GITHUB_USER/fashion-catalog-enrichment.git; cd fashion-catalog-enrichment
+git clone https://github.com/tortonef/fashion-catalog-enrichment.git; cd fashion-catalog-enrichment
 powershell -ExecutionPolicy Bypass -File .\setup.ps1
 powershell -ExecutionPolicy Bypass -File .\run.ps1
 ```
 
 **macOS / Linux**
 ```bash
-git clone https://github.com/GITHUB_USER/fashion-catalog-enrichment.git && cd fashion-catalog-enrichment
+git clone https://github.com/tortonef/fashion-catalog-enrichment.git && cd fashion-catalog-enrichment
 bash setup.sh
 bash run.sh
 ```
