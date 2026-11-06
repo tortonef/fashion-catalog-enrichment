@@ -52,3 +52,10 @@ def test_load_labels(tmp_path):
     p = tmp_path / "labels.csv"
     p.write_text("image,category,colors\nitem-01.jpg,jeans,navy|white\n", encoding="utf-8")
     assert load_labels(p) == {"item-01.jpg": {"category": {"jeans"}, "colors": {"navy", "white"}}}
+
+
+def test_render_unlabelled_attribute():
+    rows = [{"attribute": "fit", "multi": False, "experimental": True, "n": 0, "accuracy": 0.0}]
+    md = render(rows, 3, 0.1, "m")
+    assert "| fit | single-label (experimental) | 0 | not labelled | - | - |" in md
+    md.encode("ascii")  # the report must print on non-UTF-8 consoles

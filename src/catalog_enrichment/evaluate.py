@@ -68,13 +68,15 @@ def render(rows: list[dict], n_images: int, avg_seconds: float, model_id: str) -
         kind = ("multi-label" if r["multi"] else "single-label") + (
             " (experimental)" if r["experimental"] else ""
         )
-        if r["multi"]:
+        if r["n"] == 0:
+            lines.append(f"| {r['attribute']} | {kind} | 0 | not labelled | - | - |")
+        elif r["multi"]:
             lines.append(
-                f"| {r['attribute']} | {kind} | {r['n']} | – | {_pct(r['precision'])} | {_pct(r['recall'])} |"
+                f"| {r['attribute']} | {kind} | {r['n']} | - | {_pct(r['precision'])} | {_pct(r['recall'])} |"
             )
         else:
             lines.append(
-                f"| {r['attribute']} | {kind} | {r['n']} | {_pct(r['accuracy'])} | – | – |"
+                f"| {r['attribute']} | {kind} | {r['n']} | {_pct(r['accuracy'])} | - | - |"
             )
     lines += [
         "",
