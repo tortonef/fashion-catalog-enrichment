@@ -1,0 +1,16 @@
+# Every key can be overridden with an environment variable:
+# CATALOG_ENRICHMENT_<SECTION>_<KEY>, e.g. CATALOG_ENRICHMENT_REVIEW_THRESHOLD=0.6
+model:
+  id: patrickjohncyh/fashion-clip
+  revision: 7e3ba62ce16b379a1ab479346b66f192e76f51b7  # pinned for reproducibility
+  cache_dir: .cache/models
+paths:
+  images: data/images
+  taxonomy: config/taxonomy.yaml
+  schema: schema/product.schema.json
+  labels: data/eval/labels.csv
+  eval_report: docs/eval_results.md
+review_threshold: 0.5        # attribute confidence below this is flagged "needs human review"
+multi_label_threshold: 0.15  # multi-label groups keep labels scoring at least this...
+multi_label_top_k: 3         # ...up to this many labels
+sku_prefix: DEMO
