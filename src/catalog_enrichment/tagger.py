@@ -43,7 +43,9 @@ class ItemResult:
 
     @property
     def needs_review(self) -> bool:
-        return any(a.needs_review for a in self.attributes.values())
+        """Flag the item only for low confidence on core attributes: experimental ones are
+        almost always uncertain, so counting them would flag every item."""
+        return any(a.needs_review and not a.experimental for a in self.attributes.values())
 
 
 def softmax(logits: np.ndarray) -> np.ndarray:

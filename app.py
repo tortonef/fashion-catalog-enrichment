@@ -46,7 +46,7 @@ with st.sidebar:
     st.header("Review")
     threshold = st.slider(
         "Review threshold", 0.05, 0.95, float(cfg["review_threshold"]), 0.05,
-        help="Attributes whose confidence is below this value are flagged 'needs review'.",
+        help="Core attributes (category, colors, pattern, occasions) below this confidence flag the item for review. Experimental attributes are shown but never flag it.",
     )  # fmt: skip
     st.caption("Runs 100% locally on CPU. No data leaves this machine.")
 
@@ -127,9 +127,10 @@ with review_tab:
         st.image(im.convert("RGB"), width="stretch")
     with right:
         for attr in item.attributes.values():
-            tags = (" · :orange[needs review]" if attr.needs_review else "") + (
-                " · :gray[experimental]" if attr.experimental else ""
-            )
+            if attr.experimental:  # shown for information, never flags the item
+                tags = " · :gray[experimental" + (", low confidence]" if attr.needs_review else "]")
+            else:
+                tags = " · :orange[needs review]" if attr.needs_review else ""
             st.markdown(f"**{attr.group}**: {', '.join(attr.values)}{tags}")
             st.progress(attr.confidence, text=f"confidence {attr.confidence:.0%}")
             alternatives = [f"{k} {v:.0%}" for k, v in list(attr.scores.items())[1:4]]
@@ -154,7 +155,7 @@ with table_tab:
         width="stretch",
         disabled=["review", "sku", "image"],
         column_config={
-            "review": st.column_config.TextColumn("", width="small", help="⚠ = at least one attribute needs review"),
+            "review": st.column_config.TextColumn("", width="small", help="⚠ = at least one core attribute needs review"),
             "category": st.column_config.SelectboxColumn(options=props["category"]["enum"], required=True),
             "gender": st.column_config.SelectboxColumn(options=props["gender"]["enum"], required=True),
             "season": st.column_config.SelectboxColumn(options=props["season"]["enum"], required=True),

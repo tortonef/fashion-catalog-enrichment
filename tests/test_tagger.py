@@ -67,3 +67,17 @@ def test_tag_paths_and_list_images(tmp_path, groups):
     items = Tagger(FakeEncoder(["anything"]), groups).tag_paths(paths)
     assert [i.image for i in items] == ["a.jpg", "b.png"]
     assert list_images(tmp_path / "missing") == []
+
+
+def test_item_review_ignores_experimental_attributes():
+    from catalog_enrichment.tagger import AttributeResult, ItemResult
+
+    def attr(name, experimental, needs_review):
+        return AttributeResult(name, ["x"], 0.3, {"x": 0.3}, experimental, needs_review)
+
+    item = ItemResult(
+        "a.jpg", {"category": attr("category", False, False), "fit": attr("fit", True, True)}
+    )
+    assert not item.needs_review
+    item.attributes["category"].needs_review = True
+    assert item.needs_review
