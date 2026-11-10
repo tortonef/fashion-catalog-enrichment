@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title desc">
-  <!-- Shared portfolio banner layout. Per repo, change only: the accent color (#C8553D), eyebrow number,
+  <!-- Shared portfolio banner layout. Per repo, change only: the accent color (#C8553D),
        title, tagline lines and the motif group on the right. -->
   <title id="title">Fashion Catalog Enrichment</title>
   <desc id="desc">Turn a product photo into structured, catalog-ready attributes in seconds, with confidence scores and a human-review step, running 100% locally.</desc>
@@ -14,12 +14,11 @@
   <rect width="10" height="320" class="accent"/>
 
   <!-- Text block -->
-  <text x="72" y="92" class="font accent" font-size="15" font-weight="600" letter-spacing="3">GENAI FOR FASHION · 01 / 03</text>
-  <text x="72" y="152" class="font ink" font-size="52" font-weight="700">Fashion Catalog Enrichment</text>
+  <text x="72" y="125" class="font ink" font-size="52" font-weight="700">Fashion Catalog Enrichment</text>
   <g class="font ink" font-size="20" fill-opacity="0.78">
-    <text x="72" y="204">Turn a product photo into structured, catalog-ready attributes</text>
-    <text x="72" y="232">in seconds, with confidence scores and a human-review step,</text>
-    <text x="72" y="260">running 100% locally.</text>
+    <text x="72" y="177">Turn a product photo into structured, catalog-ready attributes</text>
+    <text x="72" y="205">in seconds, with confidence scores and a human-review step,</text>
+    <text x="72" y="233">running 100% locally.</text>
   </g>
 
   <!-- Motif: photo -> attributes with confidence bars; the last one awaits human review -->
